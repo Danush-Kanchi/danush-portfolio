@@ -169,8 +169,6 @@ export default function Portfolio() {
     return () => clearTimeout(timer);
   },[]);
 
-  const downloadResume = () => window.print();
-
   return (
     <AnimatePresence>
       {loading ? (
@@ -275,8 +273,9 @@ export default function Portfolio() {
                 >
                   View Experience
                 </motion.a>
-                <motion.button
-                  onClick={downloadResume}
+                <motion.a
+                  href="/Danush-Kanchi-Resume.pdf"
+                  download
                   whileHover={{ scale: 1.03, y: -2 }}
                   whileTap={{ scale: 0.98 }}
                   transition={interactiveSpring}
@@ -284,7 +283,7 @@ export default function Portfolio() {
                 >
                   <Download size={16} className="group-hover:-translate-y-1 transition-transform" />
                   Download Resume
-                </motion.button>
+                </motion.a>
               </motion.div>
 
               <motion.div
