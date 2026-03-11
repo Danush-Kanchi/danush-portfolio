@@ -124,7 +124,7 @@ export default function Portfolio() {
     damping: 28,
     mass: 0.2,
   });
-  const heroY = useTransform(scrollYProgress, [0, 0.22], [0, shouldReduceMotion ? 24 : 90]);
+  const heroY = useTransform(scrollYProgress, [0, 0.22], [0, shouldReduceMotion ? -12 : -90]);
   const heroOpacity = useTransform(scrollYProgress, [0, 0.2], [1, 0.35]);
   const motionY = shouldReduceMotion ? 10 : 24;
   const motionDuration = shouldReduceMotion ? 0.3 : 0.55;
