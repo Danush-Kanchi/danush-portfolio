@@ -199,10 +199,12 @@ export default function Portfolio() {
     const targetCard = jobRefs.current[index];
     if (!targetCard) return;
 
+    const scrollDelay = shouldReduceMotion ? 40 : 340;
     window.setTimeout(() => {
-      const targetTop = targetCard.getBoundingClientRect().top + window.scrollY - 8;
+      const stickyOffset = 72;
+      const targetTop = targetCard.getBoundingClientRect().top + window.scrollY - stickyOffset;
       window.scrollTo({ top: targetTop, behavior: "smooth" });
-    }, 40);
+    }, scrollDelay);
   };
 
   return (
