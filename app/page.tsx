@@ -155,7 +155,7 @@ export default function Portfolio() {
     ? { duration: 0.2 }
     : { type: "spring" as const, stiffness: 280, damping: 20 };
 
-  const replayViewport = { once: false, amount: 0.28 };
+  const replayViewport = { once: true, amount: 0.1 };
   const sectionReveal = {
     hidden: { opacity: 0, y: motionY },
     visible: {
