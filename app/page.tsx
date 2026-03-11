@@ -12,7 +12,7 @@ const DATA = {
     location: "Amherst, MA",
     email: "dkanchi@umass.edu",
     phone: "+1 (413) 430-9092",
-    links:["linkedin.com/in/danushkanchi"]
+    links:["https://www.linkedin.com/in/danushkanchi/"]
   },
   achievements:[
     { metric: "~40%", context: "Cut CI/CD overhead by eliminating dedicated runner EC2 instances via GitHub Actions and AWS SSM." },
@@ -63,7 +63,8 @@ const DATA = {
     {
       title: "Cook-Curry Recipe Platform",
       stack: ["PostgreSQL", "Angular"],
-      bullets: "Full-stack recipe app with ingredient-based recommendation engine and cuisine-based filtering."
+      bullets: "Full-stack recipe app with ingredient-based recommendation engine and cuisine-based filtering.",
+      link: "https://github.com/Danush-Kanchi/CookCurry"
     }
   ],
   skills:[
@@ -91,7 +92,8 @@ const DATA = {
     {
       title: "E-Voting System using Blockchain Technology and Homomorphic Encryption",
       venue: "IJRASET 2023",
-      desc: "Proposed a secure, transparent voting system using Blockchain, AES with Homomorphic encryption, and cloud storage."
+      desc: "Proposed a secure, transparent voting system using Blockchain, AES with Homomorphic encryption, and cloud storage.",
+      link: "https://www.ijraset.com/research-paper/e-voting-system-using-blockchain-technology"
     }
   ],
   certifications:["AWS Machine Learning (2021)", "IBM Data Science Specialization (2021)"]
@@ -309,7 +311,7 @@ export default function Portfolio() {
                   <Phone size={16} /> {DATA.basics.phone}
                 </motion.a>
                 <motion.a
-                  href={`https://${DATA.basics.links[0]}`}
+                  href={DATA.basics.links[0]}
                   target="_blank"
                   rel="noreferrer"
                   whileHover={{ y: -2 }}
@@ -456,7 +458,19 @@ export default function Portfolio() {
                 >
                   <h4 className="text-lg font-bold text-white mb-3 flex items-start justify-between">
                     {project.title}
-                    <ExternalLink size={16} className="text-slate-500 shrink-0 mt-1" />
+                    {project.link ? (
+                      <a
+                        href={project.link}
+                        target="_blank"
+                        rel="noreferrer"
+                        aria-label={`${project.title} repository`}
+                        className="text-slate-500 hover:text-cyan-300 transition-colors"
+                      >
+                        <ExternalLink size={16} className="shrink-0 mt-1" />
+                      </a>
+                    ) : (
+                      <ExternalLink size={16} className="text-slate-500 shrink-0 mt-1" />
+                    )}
                   </h4>
                   <p className="text-sm text-slate-400 flex-grow mb-6 leading-relaxed">
                     {project.bullets}
@@ -579,8 +593,10 @@ export default function Portfolio() {
                       transition={{ delay: idx * 0.1 }}
                       className="p-6 border-l-2 border-cyan-500 bg-cyan-500/5 rounded-r-2xl"
                     >
-                      <h4 className="font-bold text-white leading-snug mb-2">{pub.title}</h4>
-                      <span className="inline-block px-2 py-1 bg-cyan-500/20 text-cyan-300 text-xs rounded mb-3 font-semibold">{pub.venue}</span>
+                      <a href={pub.link} target="_blank" rel="noreferrer" className="inline-block group">
+                        <h4 className="font-bold text-white leading-snug mb-2 group-hover:text-cyan-300 transition-colors">{pub.title}</h4>
+                        <span className="inline-block px-2 py-1 bg-cyan-500/20 text-cyan-300 text-xs rounded mb-3 font-semibold">{pub.venue}</span>
+                      </a>
                       <p className="text-sm text-slate-400 leading-relaxed">{pub.desc}</p>
                     </motion.div>
                   ))}
