@@ -124,7 +124,6 @@ export default function Portfolio() {
     damping: 28,
     mass: 0.2,
   });
-  const heroY = useTransform(scrollYProgress, [0, 0.22], [0, shouldReduceMotion ? -12 : -90]);
   const heroOpacity = useTransform(scrollYProgress, [0, 0.2], [1, 0.35]);
   const motionY = shouldReduceMotion ? 10 : 24;
   const motionDuration = shouldReduceMotion ? 0.3 : 0.55;
@@ -208,7 +207,7 @@ export default function Portfolio() {
           <motion.div className="fixed left-0 top-0 z-[60] h-[2px] w-full origin-left bg-gradient-to-r from-cyan-400 via-blue-500 to-cyan-300" style={{ scaleX: progressScaleX }} />
 
           <motion.section
-            style={{ y: heroY, opacity: heroOpacity }}
+            style={{ opacity: heroOpacity }}
             className="relative flex flex-col items-center justify-center pt-32 pb-20 px-6 text-center max-w-5xl mx-auto"
           >
             <motion.div
