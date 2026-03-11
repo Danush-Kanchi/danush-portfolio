@@ -8,11 +8,17 @@ const inter = Inter({ subsets: ["latin"] });
 export const metadata: Metadata = {
   title: "Danush Kanchi | SRE & DevOps Engineer",
   description: "Futuristic portfolio for Danush Kanchi",
+  other: {
+    google: "notranslate",
+  },
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className="scroll-smooth">
+    <html lang="en-US" className="scroll-smooth" translate="no">
+      <head>
+        <meta httpEquiv="Content-Language" content="en" />
+      </head>
       <body className={`${inter.className} bg-slate-950 text-slate-200 antialiased selection:bg-cyan-500/30`}>
         <AnimatedBackground />
         {children}
