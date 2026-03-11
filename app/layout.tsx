@@ -7,7 +7,17 @@ const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Danush Kanchi | SRE & DevOps Engineer",
-  description: "Futuristic portfolio for Danush Kanchi",
+  description: "Portfolio of Danush Kanchi, SRE/DevOps Engineer specializing in AWS, Terraform, CI/CD, and observability.",
+  openGraph: {
+    title: "Danush Kanchi | SRE & DevOps Engineer",
+    description: "Portfolio of Danush Kanchi, SRE/DevOps Engineer specializing in AWS, Terraform, CI/CD, and observability.",
+    type: "website",
+  },
+  twitter: {
+    card: "summary",
+    title: "Danush Kanchi | SRE & DevOps Engineer",
+    description: "Portfolio of Danush Kanchi, SRE/DevOps Engineer specializing in AWS, Terraform, CI/CD, and observability.",
+  },
   other: {
     google: "notranslate",
   },
