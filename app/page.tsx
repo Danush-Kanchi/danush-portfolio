@@ -375,7 +375,7 @@ export default function Portfolio() {
             viewport={replayViewport}
           >
             <motion.div
-              className="sticky top-20 z-20 -mx-2 mb-10 flex items-center gap-3 rounded-xl bg-slate-950/70 px-4 py-3 backdrop-blur-md supports-[backdrop-filter]:bg-slate-950/55"
+              className="sticky top-0 md:top-20 z-20 -mx-2 mb-10 flex items-center gap-3 rounded-xl bg-slate-950/70 px-4 py-3 backdrop-blur-md supports-[backdrop-filter]:bg-slate-950/55"
               initial={{ opacity: 0, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true, amount: 0.5 }}
@@ -453,7 +453,7 @@ export default function Portfolio() {
             viewport={replayViewport}
           >
             <motion.div
-              className="sticky top-20 z-20 -mx-2 mb-10 flex items-center gap-3 rounded-xl bg-slate-950/70 px-4 py-3 backdrop-blur-md supports-[backdrop-filter]:bg-slate-950/55"
+              className="sticky top-0 md:top-20 z-20 -mx-2 mb-10 flex items-center gap-3 rounded-xl bg-slate-950/70 px-4 py-3 backdrop-blur-md supports-[backdrop-filter]:bg-slate-950/55"
               initial={{ opacity: 0, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true, amount: 0.5 }}
@@ -512,7 +512,7 @@ export default function Portfolio() {
             viewport={replayViewport}
           >
             <motion.div
-              className="sticky top-20 z-20 -mx-2 mb-10 flex items-center gap-3 rounded-xl bg-slate-950/70 px-4 py-3 backdrop-blur-md supports-[backdrop-filter]:bg-slate-950/55"
+              className="sticky top-0 md:top-20 z-20 -mx-2 mb-10 flex items-center gap-3 rounded-xl bg-slate-950/70 px-4 py-3 backdrop-blur-md supports-[backdrop-filter]:bg-slate-950/55"
               initial={{ opacity: 0, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true, amount: 0.5 }}
@@ -559,7 +559,7 @@ export default function Portfolio() {
             <div className="grid lg:grid-cols-2 gap-16">
               <div>
                 <motion.div
-                  className="sticky top-20 z-20 -mx-2 mb-8 flex items-center gap-3 rounded-xl bg-slate-950/70 px-4 py-3 backdrop-blur-md supports-[backdrop-filter]:bg-slate-950/55"
+                  className="sticky top-0 md:top-20 z-20 -mx-2 mb-8 flex items-center gap-3 rounded-xl bg-slate-950/70 px-4 py-3 backdrop-blur-md supports-[backdrop-filter]:bg-slate-950/55"
                   initial={{ opacity: 0, x: -18 }}
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true, amount: 0.5 }}
@@ -592,7 +592,7 @@ export default function Portfolio() {
               <div className="space-y-12">
                 <div>
                   <motion.div
-                    className="sticky top-20 z-20 -mx-2 mb-8 flex items-center gap-3 rounded-xl bg-slate-950/70 px-4 py-3 backdrop-blur-md supports-[backdrop-filter]:bg-slate-950/55"
+                    className="sticky top-0 md:top-20 z-20 -mx-2 mb-8 flex items-center gap-3 rounded-xl bg-slate-950/70 px-4 py-3 backdrop-blur-md supports-[backdrop-filter]:bg-slate-950/55"
                     initial={{ opacity: 0, x: 18 }}
                     whileInView={{ opacity: 1, x: 0 }}
                     viewport={{ once: true, amount: 0.5 }}
@@ -621,7 +621,7 @@ export default function Portfolio() {
 
                 <div>
                   <motion.div
-                    className="sticky top-20 z-20 -mx-2 mb-8 flex items-center gap-3 rounded-xl bg-slate-950/70 px-4 py-3 backdrop-blur-md supports-[backdrop-filter]:bg-slate-950/55"
+                    className="sticky top-0 md:top-20 z-20 -mx-2 mb-8 flex items-center gap-3 rounded-xl bg-slate-950/70 px-4 py-3 backdrop-blur-md supports-[backdrop-filter]:bg-slate-950/55"
                     initial={{ opacity: 0, x: 18 }}
                     whileInView={{ opacity: 1, x: 0 }}
                     viewport={{ once: true, amount: 0.5 }}
