@@ -96,7 +96,24 @@ const DATA = {
       link: "https://www.ijraset.com/research-paper/e-voting-system-using-blockchain-technology"
     }
   ],
-  certifications:["AWS Machine Learning (2021)", "IBM Data Science Specialization (2021)"]
+  certifications:[
+    {
+      name: "AWS Machine Learning (2021)",
+      link: "https://www.coursera.org/account/accomplishments/certificate/VH8KNTB96A7D"
+    },
+    {
+      name: "IBM Data Science Specialization (2021)",
+      link: "https://www.coursera.org/account/accomplishments/specialization/certificate/U58VVPMADGNS"
+    },
+    {
+      name: "Responsive Website Basics: Code with HTML, CSS, and JavaScript",
+      link: "https://www.coursera.org/account/accomplishments/certificate/C6Z9T8BN7774"
+    },
+    {
+      name: "Cognitive Ability, Competitive Programming and Soft Skills",
+      link: "https://www.quantmasters.in/certification/view/QMIBITCERT_0048"
+    }
+  ]
 };
 
 const HighlightText = ({ text }: { text: string }) => {
@@ -616,7 +633,7 @@ export default function Portfolio() {
                   <ul className="space-y-3">
                     {DATA.certifications.map((cert, idx) => (
                       <motion.li
-                        key={cert}
+                        key={cert.name}
                         initial={{ opacity: 0, y: 12 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true, amount: 0.3 }}
@@ -625,7 +642,14 @@ export default function Portfolio() {
                         className="flex items-start gap-3 text-sm text-slate-300 p-4 border border-white/5 rounded-xl bg-white/[0.01]"
                       >
                         <div className="mt-1 w-2 h-2 rounded-full bg-cyan-500 flex-shrink-0 shadow-[0_0_8px_rgba(34,211,238,0.8)]" />
-                        <span>{cert}</span>
+                        <a
+                          href={cert.link}
+                          target="_blank"
+                          rel="noreferrer"
+                          className="hover:text-cyan-300 transition-colors"
+                        >
+                          {cert.name}
+                        </a>
                       </motion.li>
                     ))}
                   </ul>
