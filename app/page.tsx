@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence, useReducedMotion, useScroll, useSpring, useTransform } from "framer-motion";
 import { MapPin, Mail, Linkedin, Download, Phone, Terminal, Layers, ShieldCheck, Cpu, ChevronDown, GraduationCap, Briefcase, ExternalLink, Code2 } from "lucide-react";
 
@@ -135,6 +135,7 @@ const HighlightText = ({ text }: { text: string }) => {
 export default function Portfolio() {
   const [loading, setLoading] = useState(true);
   const [expandedJob, setExpandedJob] = useState<number | null>(0);
+  const jobRefs = useRef<Array<HTMLDivElement | null>>([]);
   const shouldReduceMotion = useReducedMotion();
 
   const { scrollYProgress } = useScroll();
@@ -187,6 +188,23 @@ export default function Portfolio() {
     const timer = setTimeout(() => setLoading(false), 1400);
     return () => clearTimeout(timer);
   },[]);
+
+  const handleExperienceToggle = (index: number) => {
+    const nextExpandedJob = expandedJob === index ? null : index;
+    setExpandedJob(nextExpandedJob);
+
+    if (nextExpandedJob === null) return;
+    if (typeof window === "undefined") return;
+    if (!window.matchMedia("(max-width: 767px)").matches) return;
+
+    const targetCard = jobRefs.current[index];
+    if (!targetCard) return;
+
+    window.requestAnimationFrame(() => {
+      const targetTop = targetCard.getBoundingClientRect().top + window.scrollY - 8;
+      window.scrollTo({ top: targetTop, behavior: "smooth" });
+    });
+  };
 
   return (
     <AnimatePresence>
@@ -342,7 +360,7 @@ export default function Portfolio() {
           </motion.section>
 
           <motion.section
-            className="max-w-6xl mx-auto px-6 mb-24"
+            className="max-w-6xl mx-auto px-6 mb-14 md:mb-24"
             variants={sectionReveal}
             initial="hidden"
             whileInView="visible"
@@ -368,7 +386,7 @@ export default function Portfolio() {
 
           <motion.section
             id="experience"
-            className="max-w-4xl mx-auto px-6 py-12"
+            className="max-w-4xl mx-auto px-6 py-10 md:py-12"
             variants={sectionReveal}
             initial="hidden"
             whileInView="visible"
@@ -396,6 +414,9 @@ export default function Portfolio() {
                     whileHover={{ y: -3 }}
                     transition={{ delay: idx * 0.08, duration: 0.35, type: "spring", stiffness: 170, damping: 20 }}
                     key={idx} 
+                    ref={(el) => {
+                      jobRefs.current[idx] = el;
+                    }}
                     className="relative pl-8 md:pl-12"
                   >
                     <div className="absolute -left-[5px] top-6 w-2.5 h-2.5 rounded-full bg-cyan-400 shadow-[0_0_10px_rgba(34,211,238,0.8)]" />
@@ -403,7 +424,7 @@ export default function Portfolio() {
                       type="button"
                       aria-expanded={isExpanded}
                       aria-controls={jobPanelId}
-                      onClick={() => setExpandedJob(isExpanded ? null : idx)}
+                      onClick={() => handleExperienceToggle(idx)}
                       className="w-full p-1 text-left cursor-pointer group rounded-2xl border border-transparent hover:border-white/5 transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-300 focus-visible:ring-offset-2 focus-visible:ring-offset-slate-950"
                     >
                       <div className="p-5 md:p-6 border border-white/10 rounded-2xl bg-white/5 backdrop-blur-md relative overflow-hidden">
@@ -446,7 +467,7 @@ export default function Portfolio() {
           </motion.section>
 
           <motion.section
-            className="max-w-6xl mx-auto px-6 py-20"
+            className="max-w-6xl mx-auto px-6 py-12 md:py-20"
             variants={sectionReveal}
             initial="hidden"
             whileInView="visible"
@@ -505,7 +526,7 @@ export default function Portfolio() {
           </motion.section>
 
           <motion.section
-            className="max-w-6xl mx-auto px-6 py-12"
+            className="max-w-6xl mx-auto px-6 py-10 md:py-12"
             variants={sectionReveal}
             initial="hidden"
             whileInView="visible"
@@ -550,13 +571,13 @@ export default function Portfolio() {
           </motion.section>
 
           <motion.section
-            className="max-w-6xl mx-auto px-6 py-20"
+            className="max-w-6xl mx-auto px-6 py-12 md:py-20"
             variants={sectionReveal}
             initial="hidden"
             whileInView="visible"
             viewport={replayViewport}
           >
-            <div className="grid lg:grid-cols-2 gap-16">
+            <div className="grid lg:grid-cols-2 gap-10 lg:gap-16">
               <div>
                 <motion.div
                   className="sticky top-0 z-20 -mx-2 mb-8 flex items-center gap-3 rounded-xl bg-slate-950/70 px-4 py-3 backdrop-blur-md supports-[backdrop-filter]:bg-slate-950/55"
@@ -589,7 +610,7 @@ export default function Portfolio() {
                 </div>
               </div>
 
-              <div className="space-y-12">
+              <div className="space-y-8 md:space-y-12">
                 <div>
                   <motion.div
                     className="sticky top-0 z-20 -mx-2 mb-8 flex items-center gap-3 rounded-xl bg-slate-950/70 px-4 py-3 backdrop-blur-md supports-[backdrop-filter]:bg-slate-950/55"
