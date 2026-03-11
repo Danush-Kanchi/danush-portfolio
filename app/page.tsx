@@ -101,7 +101,7 @@ const HighlightText = ({ text }: { text: string }) => {
   const parts = text.split(/(~\d+%|~\d+\s?hrs\/week|\d+\.\d+%\+)/g);
   return (
     <p className="text-slate-300 text-sm leading-relaxed mb-3">
-      <span className="text-cyan-400 mr-2">▹</span>
+      <span className="text-cyan-400 mr-2">&gt;</span>
       {parts.map((part, i) => 
         part.match(/(~\d+%|~\d+\s?hrs\/week|\d+\.\d+%\+)/) ? (
           <span key={i} className="text-cyan-300 font-semibold bg-cyan-900/30 px-1 py-0.5 rounded">{part}</span>
@@ -395,7 +395,7 @@ export default function Portfolio() {
                             <h4 className="text-xl md:text-2xl font-bold text-white mb-1 group-hover:text-cyan-300 transition-colors">{job.role}</h4>
                             <div className="flex flex-wrap items-center gap-2 md:gap-4 text-sm text-slate-400">
                               <span className="font-semibold text-cyan-400">{job.company}</span>
-                              <span className="hidden sm:block text-slate-600">•</span>
+                              <span className="hidden sm:block text-slate-600">|</span>
                               <span className="bg-slate-800/50 px-2 py-0.5 rounded-md">{job.dates}</span>
                             </div>
                           </div>

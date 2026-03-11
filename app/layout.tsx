@@ -18,8 +18,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="en-US" className="scroll-smooth" translate="no">
       <head>
         <meta httpEquiv="Content-Language" content="en" />
+        <meta name="google" content="notranslate" />
+        <meta name="googlebot" content="notranslate" />
       </head>
-      <body className={`${inter.className} bg-slate-950 text-slate-200 antialiased selection:bg-cyan-500/30`}>
+      <body className={`${inter.className} notranslate bg-slate-950 text-slate-200 antialiased selection:bg-cyan-500/30`}>
         <AnimatedBackground />
         {children}
       </body>
