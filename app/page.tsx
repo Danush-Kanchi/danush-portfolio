@@ -195,15 +195,14 @@ export default function Portfolio() {
 
     if (nextExpandedJob === null) return;
     if (typeof window === "undefined") return;
-    if (!window.matchMedia("(max-width: 767px)").matches) return;
 
     const targetCard = jobRefs.current[index];
     if (!targetCard) return;
 
-    window.requestAnimationFrame(() => {
+    window.setTimeout(() => {
       const targetTop = targetCard.getBoundingClientRect().top + window.scrollY - 8;
       window.scrollTo({ top: targetTop, behavior: "smooth" });
-    });
+    }, 40);
   };
 
   return (
