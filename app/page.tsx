@@ -276,7 +276,7 @@ export default function Portfolio() {
                   View Experience
                 </motion.a>
                 <motion.a
-                  href="/Danush-Kanchi-Resume.pdf"
+                  href="Danush-Kanchi-Resume.pdf"
                   download
                   whileHover={{ scale: 1.03, y: -2 }}
                   whileTap={{ scale: 0.98 }}
